@@ -17,6 +17,17 @@ const style = {
         paddingLeft: 15,
         fontWeight: 'bold',
         color: 'green'
+    },
+    desstyle:{
+        flex: 1, 
+        paddingLeft: 15, 
+        color: '#000', 
+        fontSize: 18, 
+        backgroundColor: 'lightgreen' 
+    },
+    boxstyle: {
+        flex: 2,
+        flexDirection: 'row'
     }
 }
 
@@ -34,8 +45,8 @@ class ListItem extends Component {
 
         if (expanded ) {
             return (
-                <CardSection>
-                    <Text style={{ flex: 1, paddingLeft: 15, color: '#000', fontSize: 18 }}>
+                <CardSection >
+                    <Text style={style.desstyle}>
                         {library.description}
                     </Text>
                 </CardSection>
@@ -51,8 +62,8 @@ class ListItem extends Component {
             <TouchableWithoutFeedback
                 onPress = {() => this.props.selectLibrary (id)}
             >
-                <View>
-                    <CardSection>
+                <View >
+                    <CardSection style={style.boxstyle} >
                         <Text style={style.titlestyle}>{title}</Text>
                     </CardSection>
                     {this.renderDescription()}
